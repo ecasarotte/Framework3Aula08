@@ -1,0 +1,41 @@
+<div *ngIf="exibirMenu()" class="menu">
+    <h1>Bem vindo ao laboratório</h1>
+    <h2>Escolha a opção desejada</h2>
+
+    <p>
+        <button (click)="coletarExames()">Coleta de exames</button>
+        <button (click)="retirarResultados()">Retirada de resultados</button>
+        <button (click)="filaPrioritaria()">Prioritário</button>
+        <button (click)="administracao()">Administração</button>
+        <button (click)="resetar()">Resetar Filas</button>
+    </p>
+</div>
+
+<div *ngIf="exibirAtendimento()" class="exibicao">
+    <h1>Tipo de atendimento escolhido:</h1>
+    <input type="text" [value]="exibirTipoDeAtendimento()">
+
+    <h2>Posição na fila:</h2>
+
+    <p>
+        <input type="text" [value]="exibirPosicaoNaFila()">
+        <button (click)="voltar()">Voltar</button>
+    </p>
+
+</div>
+
+<div *ngIf="exibirSituacaoFila()" class="administracao">
+    <h1>Situação da fila</h1>
+
+    <p><label>Coleta de exames:</label></p>
+    <input type="text" [value]="administracao()[0]">
+    <p><label>Retirada de resultados:</label></p>
+    <input type="text" [value]="administracao()[1]">
+    <p><label> Preferencial:</label></p>
+    <input type="text" [value]="administracao()[2]">
+
+    <p><label>Total de pessoas no laboratorio:</label></p>
+    <input type="text" [value]="administracao()[3]">
+
+    <button (click)="voltar()">Voltar</button>
+</div>
